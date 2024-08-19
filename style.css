@@ -4,3 +4,22 @@ body {
     background-size: cover;
     background-attachment: fixed;
   }
+footer{
+    background-color: pink;
+}
+footer{
+display: flex;
+justify-content: center;
+}
+footer a{
+margin-top: 10px;
+margin-bottom: 10px;
+color: black;
+font-weight: bold;
+text-decoration: none;
+margin-left: 20px; 
+right: 20px;
+}
+footer a:hover{
+    color: white;
+}
