@@ -26,4 +26,27 @@ footer a:hover{
     color: white;
 }
 
+*{
+    font-family: Helvetica;
+}
+img {
+    height: 150px;
+}
+.description{
+    font-size: 20px;
+}
+#cook-time {
+    font-weight: bold;
+}
+.ingredients li{
+    list-style: square;
+}
+.time{
+    color: gray;
+}
+p .citation, 
+a{
+    color: SeaGreen;
+}
+
 
