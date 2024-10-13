@@ -15,7 +15,7 @@
     <div class="hero">
         <nav>
         <img src="ishin.jpg" class="profile">
-    <img src="moon-removebg-preview (1).png" id="icon"> 
+    <img src="images/moon-removebg-preview (1).png" id="icon"> 
 </nav>
 <div class="info">
     <h1>About me:</h1>
@@ -58,9 +58,9 @@
         <ol style="text-align: left;"><a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a></ol>
         <ol style="text-align: left;"><a href="https://github.com/Ishin24" target="_blank">Github</a></ol>
         <ol style="text-align: left;"><a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a></ol>
-        <ol style="text-align: left;"><a href="https://Ishin24.github.io/healthyrecipes.html">Healthy Recipe</a></ol>
+        <ol style="text-align: left;"><a href="html/healthyrecipe/index.html">Healthy Recipe</a></ol>
         <ol style="text-align: left;"><a href="html/fashionblog/index.html">Fashionblog</a></ol>
-        <ol style="text-align: left;"><a href="oliviawoodruffportfolio">Olivia Woodruff Portfolio</a></ol>
+        <ol style="text-align: left;"><a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff Portfolio</a></ol>
     </ul>
 
     </ul>  
@@ -80,21 +80,21 @@
     let LocalData = localStorage.getItem("theme");
 
     if (LocalData == "light"){
-        icon.src = "moon-removebg-preview (1).png";
+        icon.src = "images/moon-removebg-preview (1).png";
         document.body.classList.remove("dark-theme");
     }
     else if(LocalData == "dark"){ 
-        icon.src = "sun-removebg-preview (1).png";
+        icon.src = "images/sun-removebg-preview (1).png";
         document.body.classList.add("dark-theme");
     }
 
     icon.onclick = function(){
         document.body.classList.toggle("dark-theme");
         if(document.body.classList.contains("dark-theme")){
-            icon.src = "sun-removebg-preview (1).png";
+            icon.src = "images/sun-removebg-preview (1).png";
             localStorage.setItem("theme", "dark");
         }else{
-            icon.src = "moon-removebg-preview (1).png";
+            icon.src = "images/moon-removebg-preview (1).png";
             localStorage.setItem("theme", "light");
         }
     }
