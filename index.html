@@ -9,41 +9,95 @@
 </head>
 <body> 
     <center>
-        <h1>MY PORTFOLIO</h1>
-          <hr color="black">
-         <img style="border: 5px solid black; border-radius: 250px; width:350px ; height: 350px;" src="images/ishin.jpg" alt="" >
-<h1>About me:</h1>
-    <p> My name is Gwyn Kenshin Novilla currently at University of Immaculate Conception Section BSIT-2A 
-        <br>A little something about me is that I'm Lazy a person but
-        <br>I can get the job done </p>
-<h2>Favorites:</h2> 
-<ul style="text-align: center; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
-    <li style="text-align: left;">Reading Manga</li>
-    <li style="text-align: left;">Playing games</li>
-    <li style="text-align: left;">Sleeping</li>
-    <li style="text-align: left;">Eating</li>
-    <li style="text-align: left;">Take walks</li>
-    </ul>    
-<h2>School Projects:</h2> 
-<ul style="text-align: left; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
-<li style="text-align: left;">Research</li>
-<li style="text-align: left;">Few Codings</li>
+    <h1>MY PORTFOLIO</h1>
+        </center>
+        <hr>
+    <div class="hero">
+        <nav>
+        <img src="ishin.jpg" class="profile">
+    <img src="moon-removebg-preview (1).png" id="icon"> 
+</nav>
+<div class="info">
+    <h1>About me:</h1>
+    <h1><span>I'm Gwyn Kenshin Novilla</span></h1>
+    <p>A little something about me is that I'm Lazy a person but
+    <br>I can get the job done </p>
+    <br>
+
+    <div class="List"><ul>
+        <li><h2>FAVORITES:</h2></li>
+    <ul style="text-align: center; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
+    <ol style="text-align: left;">Reading Manga</ol>
+    <ol style="text-align: left;">Playing games</ol>
+    <ol style="text-align: left;">Sleeping</ol>
+    <ol style="text-align: left;">Eating</ol>
+    <ol style="text-align: left;">Take walks</ol>
+    <br>
+    </ul> 
+
+   <ul>
+
+        <li>SCHOOL PROJECTS:</li>
+        <ul style="text-align: left; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
+            <ol style="text-align: left;">Research</ol>
+            <ol style="text-align: left;">Few Codings</ol>
+            <br>
+        </ul>
+
+   <ul>
+        <li>TALENTS:</li>
+        <ul style="text-align: center; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
+            <ol style="text-align: left;">Fast Reading</ol>
+            <ol style="text-align: left;">Adaptability</ol> 
+            <ol style="text-align: left;"></ol>
+            <br>
     </ul>
-<h2>Talents:</h2> 
-<ul style="text-align: center; list-style-type: disc; padding: 0; margin: 0 auto; display: inline-block;">
-        <li style="text-align: left;">Fast Reading</li>
-        <li style="text-align: left;">Adaptability</li>   
+
+    <ul>
+        <li>SOCIALS:</li>
+        <ol style="text-align: left;"><a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a></ol>
+        <ol style="text-align: left;"><a href="https://github.com/Ishin24" target="_blank">Github</a></ol>
+        <ol style="text-align: left;"><a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a></ol>
+        <ol style="text-align: left;"><a href="https://Ishin24.github.io/healthyrecipes.html">Healthy Recipe</a></ol>
+        <ol style="text-align: left;"><a href="html/fashionblog/index.html">Fashionblog</a></ol>
+        <ol style="text-align: left;"><a href="oliviawoodruffportfolio">Olivia Woodruff Portfolio</a></ol>
     </ul>
-         <footer id="footer">
-    <a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a>
-    <a href="https://github.com/Ishin24" target="_blank">Github</a>
-    <a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a>
-    <a href="html/healthyrecipe/index.html">Healthy Recipe</a>
-    <a href="html/fashionblog/index.html">Fashionblog</a>
-    <a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff Portfolio</a>
-        <br> 
-    </ul>         
-</center>
-</footer>
+
+    </ul>  
+</div>
+</div>
+</div>  
+
+<script>
+    var icon = document.getElementById("icon");
+
+    if (localStorage.getItem("theme") == null){
+        localStorage.setItem("theme", "light");
+    }
+
+    localStorage.setItem("theme", "light");
+
+    let LocalData = localStorage.getItem("theme");
+
+    if (LocalData == "light"){
+        icon.src = "moon-removebg-preview (1).png";
+        document.body.classList.remove("dark-theme");
+    }
+    else if(LocalData == "dark"){ 
+        icon.src = "sun-removebg-preview (1).png";
+        document.body.classList.add("dark-theme");
+    }
+
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "sun-removebg-preview (1).png";
+            localStorage.setItem("theme", "dark");
+        }else{
+            icon.src = "moon-removebg-preview (1).png";
+            localStorage.setItem("theme", "light");
+        }
+    }
+</script>
 </body>
 </html>
