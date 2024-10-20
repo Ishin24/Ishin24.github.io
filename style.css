@@ -11,7 +11,7 @@
     --secondary-color: #edf2fc;
 }
 #icon{
-    width: 30px;
+    width: 100px;
     cursor: pointer;
 }
 .hero{
@@ -32,29 +32,40 @@ nav ul{
     flex: 1;
     text-align: right;
 }
+nav ul ol{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    color: #ff0000;
+}
 .profile{
     width: 30%;
     cursor: pointer;
     border: 5px solid black;
     border-radius: 200px; width:300px ; height: 300px;
 }
-nav ul ol{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
 .info{
     margin-left: 8%;
 }
-span{
-    color: #FFA500;
+.info h1{
+    color: #ff004c;
 }
 .info p{
     color: #757575;
     line-height: 22px;
 }
+span{
+    color: #FFA500;
+}
 p{
     color: #757575;
 }
-  
-
+.list h2{
+    color: #ff004c;
+}
+.list ul p{
+    color: #757575;
+}
+.Social ul li a{
+    color: #757575;
+}
