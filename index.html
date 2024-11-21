@@ -1,95 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="icon" href="images/folder-removebg-preview.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="icon" href="images/folder-removebg-preview.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body> 
-    <center>
-    <h1>MY <span>PORTFOLIO</span></h1>
-        </center>
-        <hr>
-    <div class="hero">
-        <nav>
-        <img src="images/ishin.jpg" class="profile">
-    <img src="images/moon-removebg-preview (1).png" id="icon"> 
-</nav>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="container">
+            <a href="#" class="logo">MyPortfolio</a>
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+  <main>
+    <section class="hero">
+      <div class="container">
+        <img src="ishin.jpg" alt="Welcome Image" class="hero-image">
+        <h1>Welcome to <span>Portfolio</span></h1>   
+        <a href="#services" class="btn-primary">Learn More</a>
+      </div>
+    </section>
+    
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I'm Lazy a person but I can get the job done when needed to.</p>
+      </div>
+    </section>
 
-<div class="info">
-    <h1>About me:</h1>
-    <h1><span>I'm Gwyn Kenshin Novilla</span></h1>
-    <p>A little something about me is that I'm Lazy a person but
-    <br>I can get the job done </p>
-    <br>
-        <ul>
-            <div class="list">
-        <h2>FAVORITES:</h2>
-    <ul>
-        <p>
-    Reading Manga and Playing games
-</p>
-    </ul> 
-        <ul>
- <h2>SCHOOL PROJECTS:</h2>
-        <ul>
-        <p>
-    Research and some Few Codings
-        </p>
-        </ul>
-        <ul>
- <h2>TALENTS:</h2>
-    <ul>
-<p>
-    Fast Reading, Adapt to situations
-</p>
-    </ul>
-    <br>
-        <ul>
-        <h2>SOCIALS:</h2>
-        <li><a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a></li>
-        <li><a href="https://github.com/Ishin24" target="_blank">Github</a></li>
-        <li><a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a></li>
-        <li><a href="html/healthyrecipe/index.html">Healthy Recipe</a></li>
-        <li><a href="html/fashionblog/index.html">Fashionblog</a></li>
-        <li><a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff Portfolio</a></li>
-    </ul>
-</div>
-</div>
-</div>  
+    <section id="services" class="services">
+      <div class="container">
+        <h2>FAVORITES</h2>
+        <p>Reading Manga and Playing games</p>
+        <div class="service-item">
+          <h3>SCHOOL PROJECTS</h3>
+          <p>Research, Java Codings, Working application.</p>
+        </div>
+        <div class="service-item">
+          <h3>TALENTS</h3>
+          <p>Fast Reading, Adapt to situations.</p>
+        </div>
+        <div class="service-item">
+          <h3>SOCIALS</h3>
+          <p><li><a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a></li>
+            <li><a href="https://github.com/Ishin24" target="_blank">Github</a></li>
+            <li><a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a></li>
+            <li><a href="html/healthyrecipe/index.html">Healthy Recipe</a></li>
+            <li><a href="html/fashionblog/index.html">Fashionblog</a></li>
+            <li><a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff Portfolio</a></li>
+          </p>
 
-<script>
-    var icon = document.getElementById("icon");
+          <section id="dictionary" class="dictionary">
+            <div class="container">
+              <h2>Word Lookup</h2>
+              <input type="text" id="word-input" placeholder="Enter a word" />
+              <button id="fetch-definition" class="btn-primary">Get Definition</button>
+              <div id="definition-result">
+                <p>Type a word and click the button to see its definition.</p>
+              </div>
+            </div>
+          </section>
+          
+          
+  <script src="script.js"></script>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    if (localStorage.getItem("theme") == null){
-        localStorage.setItem("theme", "light");
-    }
-
-    localStorage.setItem("theme", "light");
-
-    let LocalData = localStorage.getItem("theme");
-
-    if (LocalData == "light"){
-        icon.src = "images/moon-removebg-preview (1).png";
-        document.body.classList.remove("dark-theme");
-    }
-    else if(LocalData == "dark"){ 
-        icon.src = "images/sun.png";
-        document.body.classList.add("dark-theme");
-    }
-
-    icon.onclick = function(){
-        document.body.classList.toggle("dark-theme");
-        if(document.body.classList.contains("dark-theme")){
-            icon.src = "images/sun.png";
-            localStorage.setItem("theme", "dark");
-        }else{
-            icon.src = "images/moon-removebg-preview (1).png";
-            localStorage.setItem("theme", "light");
-        }
-    }
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
