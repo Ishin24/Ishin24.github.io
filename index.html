@@ -3,79 +3,306 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="icon" href="images/folder-removebg-preview.png">
+  <title>Gwyn Kenshin Novilla — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Gwyn Kenshin Novilla, BS Information Technology student and full-stack developer in Davao City, Philippines.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gwyn Kenshin Novilla — Full-Stack Developer">
+  <meta property="og:description" content="4th-year BS Information Technology student and full-stack developer in Davao City, Philippines, building web and mobile products with a focus on learning technology.">
+  <meta property="og:image" content="images/ishin.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gwyn Kenshin Novilla — Full-Stack Developer">
+  <meta name="twitter:description" content="4th-year BS Information Technology student and full-stack developer in Davao City, Philippines.">
+  <meta name="twitter:image" content="images/ishin.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <div class="container">
-            <a href="#" class="logo">MyPortfolio</a>
-            <ul class="nav-links">
-              <li><a href="#about">About</a></li>
-                <button id="theme-toggle" class="theme-toggle">🌙</button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      
-  <main>
-    <section class="hero">
-      <div class="container">
-        <img src="images/ishin.jpg" alt="Welcome Image" class="hero-image">
-        <h1>Welcome to <span>My Portfolio</span></h1>   
-        <a href="#services" class="btn-primary">Learn More</a>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="#top" class="mark">GKN<span class="mark-dot">.</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-toggle-dot"></span>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </section>
-    
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I'm Lazy a person but I can get the job done when needed to.</p>
+    </div>
+    <nav class="site-nav mobile" aria-label="Primary mobile">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section id="top" class="hero">
+      <div class="wrap hero-row">
+        <div class="hero-copy">
+          <p class="eyebrow">Davao City, Philippines</p>
+          <h1 class="hero-title">Gwyn Kenshin<br>Novilla</h1>
+          <p class="hero-lede">
+            I'm a 4th-year BS Information Technology student, graduating and
+            building full-stack web and mobile products, with a focus on
+            tools that make learning more adaptive and accessible.
+          </p>
+          <div class="hero-links">
+            <a href="#work" class="btn-primary">See my work</a>
+            <a href="images/resume.jpg" target="_blank" rel="noopener" class="btn-ghost">View résumé</a>
+          </div>
+          <p class="hero-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Graduating this year — eager to learn, and open to my first role.
+          </p>
+          <ul class="hero-meta">
+            <li><a href="mailto:gnovilla_230000001484@uic.edu.ph">gnovilla_230000001484@uic.edu.ph</a></li>
+            <li><a href="tel:+639912165257">0991 216 5257</a></li>
+          </ul>
+        </div>
+        <div class="hero-figure">
+          <img src="images/ishin.jpg" alt="Portrait of Gwyn Kenshin Novilla" width="320" height="320">
+        </div>
       </div>
     </section>
 
-    <section id="services" class="services">
-      <div class="container">
-        <h2>FAVORITES</h2>
-        <p>Reading Manga and Playing games</p>
-        <div class="service-item">
-          <h3>SCHOOL PROJECTS</h3>
-          <p>Research, Java Codings, Working application.</p>
+    <section id="about" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">About</p>
         </div>
-        <div class="service-item">
-          <h3>TALENTS</h3>
-          <p>Fast Reading, Adapt to situations.</p>
-        </div>
-        <div class="service-item">
-          <h3>SOCIALS</h3>
-          <p><li><a href="https://www.facebook.com/gwynkenshin.novilla" target="_blank">Facebook</a></li>
-            <li><a href="https://github.com/Ishin24" target="_blank">Github</a></li>
-            <li><a href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank">Codepen</a></li>
-            <li><a href="html/healthyrecipe/index.html">Healthy Recipe</a></li>
-            <li><a href="html/fashionblog/index.html">Fashionblog</a></li>
-            <li><a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff Portfolio</a></li>
+        <div class="section-body">
+          <p class="lead-text">
+            I specialize in Learning Technologies at the University of the
+            Immaculate Conception, where I also serve as IP Liaison for
+            LearnShift — an adaptive AI learning platform — coordinating
+            intellectual-property documentation alongside the development team.
+          </p>
+          <p>
+            Outside of coursework, I build across the stack: web apps in
+            React and Next.js, backends in Node and Python, and mobile apps
+            in Flutter. I'm drawn to projects that turn a real, specific
+            problem into something people can actually use.
+          </p>
+          <p>
+            Away from the keyboard, I'm usually playing games or out on a
+            long walk — both good for clearing my head between debugging
+            sessions.
           </p>
 
-          <section id="dictionary" class="dictionary">
-            <div class="container">
-              <h2>Word Lookup</h2>
-              <input type="text" id="word-input" placeholder="Enter a word" />
-              <button id="fetch-definition" class="btn-primary">Get Definition</button>
-              <div id="definition-result">
-                <p>Type a word and click the button to see its definition.</p>
-              </div>
-            </div>
-          </section>
-          
-          
-  <script src="script.js"></script>
+          <div class="role-card">
+            <p class="role-title">IP Liaison — LearnShift</p>
+            <p class="role-sub">Adaptive AI learning platform</p>
+            <p class="role-desc">
+              Coordinate intellectual-property documentation between the
+              development team and academic requirements — most of it
+              patent drafting, translating what the engineering team builds
+              into language that holds up as a filed claim — while
+              contributing as a full-stack developer on the platform itself.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+
+    <section id="work" class="section alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">Work</p>
+        </div>
+        <div class="section-body">
+
+          <article class="project">
+            <div class="project-head">
+              <h3>ChronoList</h3>
+              <p class="project-type">Team productivity &amp; scheduling app</p>
+            </div>
+            <p>
+              A scheduling and productivity app built with a small team to
+              help users organize tasks and manage time more effectively. I
+              contributed across front-end and back-end work to deliver core
+              features on schedule, and helped document the app for a working
+              prototype.
+            </p>
+            <ul class="tag-list">
+              <li>React</li><li>Node.js</li><li>PostgreSQL</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <h3>CareVault</h3>
+              <p class="project-type">Secure data management system</p>
+            </div>
+            <p>
+              A platform for managing sensitive records, architected with the
+              team with close attention to data protection and access
+              control. I helped deliver a working prototype and its
+              supporting documentation.
+            </p>
+            <ul class="tag-list">
+              <li>TypeScript</li><li>Express</li><li>MongoDB</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <h3>GreenShelf</h3>
+              <p class="project-type">Sustainability-focused digital platform</p>
+            </div>
+            <p>
+              A digital platform supporting sustainability and organized
+              resource management. I contributed to the app's documentation
+              and helped the team ship a functional prototype.
+            </p>
+            <ul class="tag-list">
+              <li>Next.js</li><li>Tailwind CSS</li><li>Supabase</li>
+            </ul>
+          </article>
+
+          <div class="practice-builds">
+            <p class="practice-label">Earlier practice builds</p>
+            <ul class="practice-list">
+              <li><a href="html/healthyrecipe/index.html">Healthy Recipe site</a></li>
+              <li><a href="html/fashionblog/index.html">Fashion blog layout</a></li>
+              <li><a href="html/oliviawoodruffportfolio/index.html">Olivia Woodruff portfolio study</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">Skills</p>
+        </div>
+        <div class="section-body">
+          <div class="skills-grid">
+            <div class="skill-group">
+              <p class="skill-heading">Front end</p>
+              <p class="skill-items">JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML, CSS, Java</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-heading">Back end</p>
+              <p class="skill-items">Node.js, Express, Python, Java, PHP</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-heading">Databases</p>
+              <p class="skill-items">PostgreSQL, MongoDB, MySQL, Supabase</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-heading">Mobile</p>
+              <p class="skill-items">Flutter, Dart</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-heading">Tools &amp; platforms</p>
+              <p class="skill-items">Git, VS Code, Android Studio, Oracle VirtualBox</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">Education</p>
+        </div>
+        <div class="section-body">
+          <ol class="timeline">
+            <li class="timeline-item">
+              <p class="timeline-year">2023 — Present</p>
+              <p class="timeline-title">BS Information Technology</p>
+              <p class="timeline-place">University of the Immaculate Conception, Davao City</p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-year">2021 — 2022</p>
+              <p class="timeline-title">Senior High School, STEM Strand</p>
+              <p class="timeline-place">Catalunan Pequeño Senior High School, Davao City</p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-year">2020 — 2021</p>
+              <p class="timeline-title">Senior High School, Pre-CS Strand</p>
+              <p class="timeline-place">Ateneo de Davao Senior High School, Bangkal Campus, Davao City</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="lookup" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">Extra</p>
+        </div>
+        <div class="section-body">
+          <p class="lead-text">Quick word lookup</p>
+          <p>A small tool for a fast reader — look up any word.</p>
+          <div class="lookup-box">
+            <div class="lookup-input-row">
+              <input type="text" id="word-input" placeholder="Enter a word" aria-label="Word to look up">
+              <button id="fetch-definition" class="btn-primary">Look up</button>
+            </div>
+            <div id="definition-result" class="lookup-result">
+              <p class="muted">Type a word and press look up to see its definition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <p class="index-tag">Contact</p>
+        </div>
+        <div class="section-body">
+          <p class="lead-text">Get in touch</p>
+          <p>
+            Open to internships, collaborations, and anything that lets me
+            build something people will actually use.
+          </p>
+          <ul class="contact-list">
+            <li><a href="mailto:gnovilla_230000001484@uic.edu.ph">gnovilla_230000001484@uic.edu.ph</a></li>
+            <li><a href="tel:+639912165257">0991 216 5257</a></li>
+            <li><a class="ext" href="https://github.com/Ishin24" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="ext" href="https://www.facebook.com/gwynkenshin.novilla" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a class="ext" href="https://codepen.io/GWYN-KENSHIN-N-NOVILLA" target="_blank" rel="noopener">CodePen</a></li>
+            <li><a class="ext" href="https://open.spotify.com/user/31pqbn2zik75jixdtskqznvsicz4?si=f9478ae0042d48f6" target="_blank" rel="noopener">Spotify — what I'm listening to</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>© 2026 Gwyn Kenshin Novilla</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

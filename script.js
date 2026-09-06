@@ -1,65 +1,107 @@
+// ---------------------------------------------------------
+// Theme toggle (light / dark)
+// ---------------------------------------------------------
+const root = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
-const navLinks = document.querySelector('.nav-links');
-const body = document.body;
-
-const menuToggle = document.createElement('button');
-menuToggle.textContent = '☰';
-menuToggle.classList.add('menu-toggle');
-document.querySelector('.navbar .container').appendChild(menuToggle);
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
 
 const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.classList.add(savedTheme);
-  themeToggle.textContent = savedTheme === 'dark-mode' ? '🌞' : '🌙';
+if (savedTheme === 'dark') {
+  root.setAttribute('data-theme', 'dark');
+  themeToggle.setAttribute('aria-pressed', 'true');
 }
+
 themeToggle.addEventListener('click', () => {
-  const isDarkMode = body.classList.contains('dark-mode');
-  if (isDarkMode) {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light-mode');
-    themeToggle.textContent = '🌙';
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    root.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    themeToggle.setAttribute('aria-pressed', 'false');
   } else {
-    body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark-mode');
-    themeToggle.textContent = '🌞';
+    root.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    themeToggle.setAttribute('aria-pressed', 'true');
   }
 });
 
+// ---------------------------------------------------------
+// Mobile menu
+// ---------------------------------------------------------
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav = document.querySelector('.site-nav.mobile');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+mobileNav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ---------------------------------------------------------
+// Word lookup
+// ---------------------------------------------------------
 const fetchDefinitionButton = document.getElementById('fetch-definition');
 const wordInput = document.getElementById('word-input');
 const definitionResult = document.getElementById('definition-result');
 
-fetchDefinitionButton.addEventListener('click', async () => {
+async function lookupWord() {
   const word = wordInput.value.trim();
   if (!word) {
-    definitionResult.innerHTML = "<p>Please enter a word.</p>";
+    definitionResult.innerHTML = '<p>Enter a word first.</p>';
     return;
   }
 
+  definitionResult.innerHTML = '<p class="muted">Looking that up…</p>';
+
   try {
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-    if (!response.ok) {
-      throw new Error('Word not found');
-    }
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+    if (!response.ok) throw new Error('Word not found');
     const data = await response.json();
 
-    const meanings = data[0].meanings.map(
-      (meaning) => `
-      <p><strong>Part of Speech:</strong> ${meaning.partOfSpeech}</p>
-      <p><strong>Definition:</strong> ${meaning.definitions[0].definition}</p>
-      `
-    ).join('');
-    definitionResult.innerHTML = `
-      <h3>Word: ${data[0].word}</h3>
-      ${meanings}
-    `;
+    const meanings = data[0].meanings
+      .map((meaning) => `
+        <p><strong>${meaning.partOfSpeech}</strong> — ${meaning.definitions[0].definition}</p>
+      `)
+      .join('');
+
+    definitionResult.innerHTML = `<h3>${data[0].word}</h3>${meanings}`;
   } catch (error) {
-    definitionResult.innerHTML = "<p>Sorry, the word was not found. Please try another one.</p>";
+    definitionResult.innerHTML = '<p>Couldn\u2019t find that word. Try another one.</p>';
     console.error('Error fetching word definition:', error);
   }
+}
+
+fetchDefinitionButton.addEventListener('click', lookupWord);
+wordInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') lookupWord();
 });
 
+// ---------------------------------------------------------
+// Active nav link on scroll
+// ---------------------------------------------------------
+const sections = document.querySelectorAll('main section[id]');
+const navLinks = document.querySelectorAll('.site-nav a');
+
+const setActiveLink = (id) => {
+  navLinks.forEach((link) => {
+    const isMatch = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('is-active', isMatch);
+  });
+};
+
+if ('IntersectionObserver' in window && sections.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActiveLink(visible.target.id);
+    },
+    { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+  );
+  sections.forEach((section) => observer.observe(section));
+}
